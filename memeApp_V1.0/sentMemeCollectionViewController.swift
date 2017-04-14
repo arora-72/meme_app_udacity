@@ -26,7 +26,7 @@ class sentMemeCollectionViewController: UICollectionViewController {
     
     @IBAction func reloadData(_ sender: Any) {
         collectionView?.reloadData()
-        print("shairngan")
+     
     
     }
 
@@ -47,13 +47,9 @@ class sentMemeCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        //multiple selctions allowing
+       
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
         override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -75,7 +71,6 @@ class sentMemeCollectionViewController: UICollectionViewController {
         cell.memeImage?.image = meme.memedImage
         cell.memeImage?.layer.borderWidth = 1.0
         cell.memeImage?.layer.borderColor = UIColor.black.cgColor
-        print("shaoem")
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

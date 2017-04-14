@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nj1-j9-Q5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yqf-iz-YZK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,24 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="hcp-e8-yDR">
-            <objects>
-                <tabBarController id="Nj1-j9-Q5E" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="cze-iX-n2k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="87v-Fe-Xgm" kind="relationship" relationship="viewControllers" id="xcY-Nv-0Vw"/>
-                        <segue destination="MX1-xq-hqN" kind="relationship" relationship="viewControllers" id="io0-e0-OY8"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bs0-9b-Hcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-192" y="946"/>
-        </scene>
         <!--Sent Meme Collection View Controller-->
         <scene sceneID="qwe-uG-Hdi">
             <objects>
@@ -72,7 +54,7 @@
                                 <action selector="reloadData:" destination="pQr-9H-ReA" id="dJD-Nt-loz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="edit" id="Fbg-TN-Mj6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fbg-TN-Mj6">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="8Ao-Qv-6af"/>
                             </connections>
@@ -99,15 +81,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mfP-2K-r3Y">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="61" width="375" height="489"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCY-WY-KzW">
+                                <rect key="frame" x="125" y="570" width="125" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="WtA-Mm-lQO" eventType="touchUpInside" id="s0P-Bu-z5I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mfP-2K-r3Y" secondAttribute="trailing" id="0sf-If-4K8"/>
                             <constraint firstItem="mfP-2K-r3Y" firstAttribute="leading" secondItem="u5B-n5-tOz" secondAttribute="leading" id="3GH-gg-uGE"/>
-                            <constraint firstItem="Kdj-bA-Jse" firstAttribute="top" secondItem="mfP-2K-r3Y" secondAttribute="bottom" id="u2e-87-QQy"/>
-                            <constraint firstItem="mfP-2K-r3Y" firstAttribute="top" secondItem="RHx-fF-K4f" secondAttribute="bottom" id="xo3-aB-40e"/>
+                            <constraint firstAttribute="trailing" secondItem="mfP-2K-r3Y" secondAttribute="trailing" id="FcN-rY-Ep2"/>
+                            <constraint firstItem="iCY-WY-KzW" firstAttribute="top" secondItem="mfP-2K-r3Y" secondAttribute="bottom" constant="20" id="TKR-hq-W67"/>
+                            <constraint firstItem="iCY-WY-KzW" firstAttribute="top" secondItem="mfP-2K-r3Y" secondAttribute="bottom" constant="20" id="YtY-Yo-TgG"/>
+                            <constraint firstItem="mfP-2K-r3Y" firstAttribute="top" secondItem="RHx-fF-K4f" secondAttribute="bottom" constant="41" id="ZSZ-h7-ICy"/>
+                            <constraint firstItem="Kdj-bA-Jse" firstAttribute="top" secondItem="iCY-WY-KzW" secondAttribute="bottom" constant="67" id="di3-Sb-sxY"/>
+                            <constraint firstItem="mfP-2K-r3Y" firstAttribute="leading" secondItem="u5B-n5-tOz" secondAttribute="leading" id="gaU-pe-FOh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iCY-WY-KzW" secondAttribute="trailing" constant="109" id="kY0-Kh-7Mk"/>
+                            <constraint firstAttribute="trailing" secondItem="mfP-2K-r3Y" secondAttribute="trailing" id="oj4-BB-PqJ"/>
+                            <constraint firstItem="iCY-WY-KzW" firstAttribute="leading" secondItem="u5B-n5-tOz" secondAttribute="leadingMargin" constant="109" id="qN4-JR-a1v"/>
+                            <constraint firstItem="Kdj-bA-Jse" firstAttribute="top" secondItem="mfP-2K-r3Y" secondAttribute="bottom" constant="117" id="u2e-87-QQy"/>
+                            <constraint firstItem="mfP-2K-r3Y" firstAttribute="top" secondItem="RHx-fF-K4f" secondAttribute="bottom" constant="41" id="xo3-aB-40e"/>
+                            <constraint firstItem="mfP-2K-r3Y" firstAttribute="leading" secondItem="u5B-n5-tOz" secondAttribute="leading" id="xqj-WD-wqD"/>
                         </constraints>
                     </view>
                     <connections>
@@ -116,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SP-R1-OPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4071" y="946"/>
+            <point key="canvasLocation" x="4069.5999999999999" y="945.87706146926541"/>
         </scene>
         <!--Meme Table View Controller-->
         <scene sceneID="DrD-6w-AAY">
@@ -262,11 +261,29 @@
             </objects>
             <point key="canvasLocation" x="3180" y="946"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jkU-3C-Zpo">
+            <objects>
+                <tabBarController id="yqf-iz-YZK" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="VW8-IE-MtI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MX1-xq-hqN" kind="relationship" relationship="viewControllers" id="xHK-PE-ia3"/>
+                        <segue destination="87v-Fe-Xgm" kind="relationship" relationship="viewControllers" id="rZ6-cB-R4A"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jn-tq-xf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633" y="946"/>
+        </scene>
         <!--collection View-->
         <scene sceneID="dVC-LV-xF2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MX1-xq-hqN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="collection View" image="table_30x30" id="zlO-sf-c9k"/>
+                    <tabBarItem key="tabBarItem" title="collection View" image="table_30x30" selectedImage="collection_30x30" id="zlO-sf-c9k"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="98A-hO-ecd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -281,11 +298,11 @@
             </objects>
             <point key="canvasLocation" x="841" y="665"/>
         </scene>
-        <!--Item-->
+        <!--table View-->
         <scene sceneID="bxv-5A-ZFr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="87v-Fe-Xgm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="collection_30x30" id="pEw-fO-JRl"/>
+                    <tabBarItem key="tabBarItem" title="table View" image="collection_30x30" selectedImage="table_30x30" id="pEw-fO-JRl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Jr-tc-sWz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -306,6 +323,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4aE-r1-TrS"/>
+        <segue reference="8Ao-Qv-6af"/>
     </inferredMetricsTieBreakers>
 </document>

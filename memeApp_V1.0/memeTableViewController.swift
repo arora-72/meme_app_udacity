@@ -15,7 +15,7 @@ class memeTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        title = "sent items"
+        title = "sent memes"
         
             }
     
