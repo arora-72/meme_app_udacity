@@ -115,6 +115,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         let memedImage = generateMemedImage()
         let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityController.completionWithItemsHandler = { activity, success, items, error in
+            
+            self.saveMeme(image: memedImage)
             self.dismiss(animated: true, completion: nil)
         }
         present(activityController, animated: true, completion: nil)
@@ -123,14 +125,22 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
        
     }
     
-    func saveMeme(){
+    func saveMeme(image: UIImage){
         //create the meme
         let memedImage = generateMemedImage()
         
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: memedImage)
         
         //appending to memes array in app delegate
-        //(UIApplication.shared.delegate as! AppDelegate).meme.append(meme)
+        
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+       
+        
+        //sent memes table and collection view controller
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        memes = appDelegate.memes
         
     }
     
@@ -210,7 +220,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     }
 
     func keyboardWillShow(_ notification:Notification) {
-        if(bottomTextField.isFirstResponder){
+        if(bottomTextField.isFirstResponder && view.frame.origin.y == 0){
         view.frame.origin.y -= getKeyboardHeight(notification)
         }
         
@@ -218,8 +228,8 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     
     
     func keyboardWillHide(_ notifications:Notification){
-        if(bottomTextField.isFirstResponder){
-        view.frame.origin.y += getKeyboardHeight(notifications)
+        if(bottomTextField.isFirstResponder && view.frame.origin.y != 0){
+       view.frame.origin.y = 0
         }
     
     
